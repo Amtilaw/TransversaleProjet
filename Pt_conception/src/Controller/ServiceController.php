@@ -27,9 +27,27 @@ class ServiceController extends AbstractController
         ]);
     }
      /** 
-     *@Route ("/list/12", name="list_show")
+     *@Route ("/list/1", name="list_show1")
      */
-    public function show(){
-        return $this->render('service/show.html.twig');
+    public function show1(){
+        return $this->render('service/show1.html.twig');
+    }
+     /** 
+     *@Route ("/list/2", name="list_show2")
+     */
+    public function show2(){
+        return $this->render('service/show2.html.twig');
+    }
+     /** 
+     *@Route ("/list/3", name="list_show3")
+     */
+    public function show3(){
+        return $this->render('service/show3.html.twig');
+    }
+     /** 
+     *@Route ("/list/4", name="list_show4")
+     */
+    public function show4(){
+        return $this->render('service/show4.html.twig');
     }
 }
