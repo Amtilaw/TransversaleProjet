@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChambreController!{% endblock %}
+
+{% block body%}
+<h2> Chambre n° {{ num }} </h2>
+{% for i in 1..4 %}
+    <p>Lit : {{i}}</p>
+    <a href= "/patients" class="btn btn-primary">ajouter patient<br></a>
+<br>
+<br>
+{% endfor %}
+{% endblock %}

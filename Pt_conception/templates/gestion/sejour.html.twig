@@ -3,23 +3,23 @@
 
 {% block body %}
 
-    <h1> formulaire pour les hospitalisations  </h1>
+    <h1> Formulaire pour les hospitalisations  </h1>
 
     <form action="sejour.php" method="POST">
   <fieldset>
     <legend>Legend</legend>
     
     <div class="form-group">
-      <label for="exampleInputEmail1">Nom et prenom du patien</label>
+      <label for="exampleInputEmail1">Nom et prenom du patient</label>
       <input type="text" class="form-control" name="nomprenom" aria-describedby="emailHelp" placeholder="nom prenom">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Service</label>
-      <input type="text" class="form-control" name="service">
+      <input type="text" class="form-control" name="service" placeholder="nom du service">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">chambre</label>
-      <input type="number" class="form-control" name="chambre" placeholder="numero et nom de rue">
+      <input type="text" class="form-control" name="chambre" placeholder="numero de la chambre">
     </div>
     <button type="submit" name ="insSejour" class="btn btn-primary">Submit</button>
   </fieldset>

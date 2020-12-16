@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1> {{ title }} </h1>
+
+<service>
+<a href= "{{ path('list_show1') }}" class="btn btn-primary">RADIOLOGIE<br> Nombre chambre : 5</a>
+</service>
+<br>
+<br>
+<a href= "{{ path('list_show2') }}" class="btn btn-primary">CARDIOLOGIE<br> Nombre chambre : 3 </a>
+</service>
+<br>
+<br>
+<a href= "{{ path('list_show3') }}" class="btn btn-primary">NEUROLOGIE<br> Nombre chambre : 2</a>
+</service>
+<br>
+<br>
+<a href= "{{ path('list_show4') }}" class="btn btn-primary">PNEUMOLOGIE<br> Nombre chambre : 3</a>
+</service>
+
+{% endblock %}
