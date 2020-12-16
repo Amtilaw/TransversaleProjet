@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Patient;
+use App\Entity\Sejours;
 use src\Repository\PatientRepository;
 
 class GestionController extends AbstractController
@@ -36,6 +37,13 @@ class GestionController extends AbstractController
     }
 
     /**
+     * @Route("/sejour", name="formulaireSejour")
+     */
+    public function formulaireSejour(){
+        return $this->render('gestion/sejour.html.twig');
+    }
+
+    /**
      * @Route("/patient.php", name="enregistrement")
      */
     public function enregistrement(Request $request, EntityManagerInterface $manager){
@@ -51,6 +59,26 @@ class GestionController extends AbstractController
                     ->setTelephone($request->request->get('telephone'));
 
             $manager->persist($patient);
+            $manager->flush();
+        }
+        return $this->render('gestion/patient.php');
+    }
+
+    /**
+     * @Route("/sejour.php", name="enregistrementSejour")
+     */
+    public function enregistrementSejour(Request $request, EntityManagerInterface $manager){
+        dump($request);
+
+        if($request->request->count() > 0){
+            $sejour = new Sejours();
+            $sejour->setnomsPatient($request->request->get('nomprenom'))
+                    //->setDateNaissance($request->request->get('dateNaiss'))
+                    ->setNomService($request->request->get('service'))
+                    ->setChambre($request->request->get('chambre'))
+                    ->setDateEntree(new \DateTime());
+
+            $manager->persist($sejour);
             $manager->flush();
         }
         return $this->render('gestion/patient.php');
