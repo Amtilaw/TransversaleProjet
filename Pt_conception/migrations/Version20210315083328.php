@@ -1,0 +1,33 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DoctrineMigrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20210315083328 extends AbstractMigration
+{
+    public function getDescription() : string
+    {
+        return '';
+    }
+
+    public function up(Schema $schema) : void
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->addSql('CREATE TABLE rdv (id INT AUTO_INCREMENT NOT NULL, nom_prenom VARCHAR(100) NOT NULL, date_rdv DATE NOT NULL, heure_rdv TIME NOT NULL, etat VARCHAR(10) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE sejours CHANGE date_sortie date_sortie DATE NOT NULL');
+    }
+
+    public function down(Schema $schema) : void
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->addSql('DROP TABLE rdv');
+        $this->addSql('ALTER TABLE sejours CHANGE date_sortie date_sortie DATE DEFAULT NULL');
+    }
+}

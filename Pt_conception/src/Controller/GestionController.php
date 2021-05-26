@@ -37,6 +37,13 @@ class GestionController extends AbstractController
     }
 
     /**
+     * @Route("/connexion", name="connexions")
+     */
+    public function connexions(){
+        return $this->render('gestion/connexion.html.twig');
+    }
+
+    /**
      * @Route("/sejour", name="formulaireSejour")
      */
     public function formulaireSejour(){
